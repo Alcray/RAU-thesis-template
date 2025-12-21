@@ -1,0 +1,53 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{graphicx}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian,english]{babel}
+\usepackage{armtex}
+\AtBeginDocument{\fontencoding{T2A}\selectfont}
+
+\usepackage{setspace,amsmath}
+\usepackage[
+  left=30mm,
+  right=15mm,
+  top=20mm,
+  bottom=20mm
+]{geometry}
+
+\usepackage{mathptmx}
+\usepackage{setspace}
+\onehalfspacing
+\sloppy
+\setlength{\parindent}{1.25cm} % стандартный абзац
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\input{titlepage}
+\fontencoding{T2A}\selectfont
+\selectlanguage{russian}
+
+\tableofcontents
+\newpage
+ 
+\newpage
+\section{Введение}
+
+\section{Обзор литературы}
+
+\section{Архитектура}
+
+\section{Применения и результаты}
+
+\section{Заключение}
+
+\cite{example2024}, 
+\cite{example2025}
+
+\section{Литература}
+\bibliographystyle{plain}
+\bibliography{references}
+ 
+\end{document}  % КОНЕЦ ДОКУМЕНТА !
