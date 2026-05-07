@@ -32,18 +32,9 @@ A comprehensive LaTeX template for Russian-Armenian (Slavic) University term pap
    - Armenian language support
    - Required LaTeX packages
 
-   On **Linux / WSL / Ubuntu**, install TeX Live packages with `apt`:
+   On **Linux / WSL / Ubuntu**, run the setup script:
    ```bash
-   sudo apt-get update
-   sudo apt-get install -y \
-     texlive-latex-base \
-     texlive-latex-recommended \
-     texlive-latex-extra \
-     texlive-fonts-recommended \
-     texlive-lang-cyrillic \
-     texlive-lang-european \
-     texlive-lang-other \
-     texlive-bibtex-extra
+   ./setup-linux.sh
    ```
 
    After installation, verify:
@@ -70,6 +61,7 @@ rau-latex-template/
 ├── references.bib        # Bibliography database
 ├── logo_rau.png          # RAU university logo
 ├── setup.sh              # Installation script
+├── setup-linux.sh        # Linux/WSL installation script
 ├── .vscode/              # VS Code configuration
 │   └── settings.json     # LaTeX Workshop settings
 └── README.md             # This file
@@ -122,7 +114,7 @@ pdflatex main.tex
 
 ### Software Dependencies
 - macOS: BasicTeX (installed by `setup.sh`)
-- Linux/WSL: TeX Live packages installed via `apt`
+- Linux/WSL: TeX Live packages (installed by `setup-linux.sh`)
 - VS Code with LaTeX Workshop extension (recommended)
 
 ## Troubleshooting
@@ -130,21 +122,17 @@ pdflatex main.tex
 ### Common Issues
 
 **"pdflatex not found"**
-- Run `./setup.sh` to install BasicTeX
+- On Linux/WSL, run `./setup-linux.sh`
+- On macOS, run `./setup.sh`
 - Restart your terminal after installation
 
 **"Unknown option 'russian'"**
-- Run `./setup.sh` to install Russian language support
+- On Linux/WSL, run `./setup-linux.sh`
+- On macOS, run `./setup.sh`
 
 **"File `armtex.sty' not found"**
-- On Linux/WSL, install the Armenian/European language collection:
-  ```bash
-  sudo apt-get install -y texlive-lang-european texlive-lang-other
-  ```
-- Then verify:
-  ```bash
-  kpsewhich armtex.sty
-  ```
+- On Linux/WSL, run `./setup-linux.sh`
+- On macOS, run `./setup.sh`
 
 **"Unicode character not set up for use with LaTeX"**
 - Ensure you have the correct language packages installed

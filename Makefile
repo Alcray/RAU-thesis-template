@@ -51,7 +51,7 @@ quick: $(DOC).tex
 # Check for LaTeX installation
 check:
 	@echo "Checking LaTeX installation..."
-	@which pdflatex || (echo "pdflatex not found. Run './setup.sh' first."; exit 1)
+	@which pdflatex || (echo "pdflatex not found. Run './setup.sh' (macOS) or './setup-linux.sh' (Linux/WSL) first."; exit 1)
 	@pdflatex --version | head -1
 	@echo "LaTeX is ready!"
 
