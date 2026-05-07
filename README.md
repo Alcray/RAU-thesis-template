@@ -19,7 +19,9 @@ A comprehensive LaTeX template for Russian-Armenian (Slavic) University term pap
    cd rau-latex-template
    ```
 
-2. **Run the setup script:**
+2. **Install LaTeX dependencies:**
+
+   On **macOS**, run the setup script:
    ```bash
    ./setup.sh
    ```
@@ -29,6 +31,25 @@ A comprehensive LaTeX template for Russian-Armenian (Slavic) University term pap
    - Russian language support
    - Armenian language support
    - Required LaTeX packages
+
+   On **Linux / WSL / Ubuntu**, install TeX Live packages with `apt`:
+   ```bash
+   sudo apt-get update
+   sudo apt-get install -y \
+     texlive-latex-base \
+     texlive-latex-recommended \
+     texlive-latex-extra \
+     texlive-fonts-recommended \
+     texlive-lang-cyrillic \
+     texlive-lang-european \
+     texlive-lang-other \
+     texlive-bibtex-extra
+   ```
+
+   After installation, verify:
+   ```bash
+   pdflatex --version
+   ```
 
 3. **Open in VS Code:**
    ```bash
@@ -95,12 +116,13 @@ pdflatex main.tex
 ## Requirements
 
 ### System Requirements
-- macOS 10.14 or later
+- macOS 10.14 or later, or Linux/WSL with `apt`
 - At least 2GB free disk space
 - Internet connection for initial setup
 
 ### Software Dependencies
-- BasicTeX (installed automatically)
+- macOS: BasicTeX (installed by `setup.sh`)
+- Linux/WSL: TeX Live packages installed via `apt`
 - VS Code with LaTeX Workshop extension (recommended)
 
 ## Troubleshooting
@@ -113,6 +135,16 @@ pdflatex main.tex
 
 **"Unknown option 'russian'"**
 - Run `./setup.sh` to install Russian language support
+
+**"File `armtex.sty' not found"**
+- On Linux/WSL, install the Armenian/European language collection:
+  ```bash
+  sudo apt-get install -y texlive-lang-european texlive-lang-other
+  ```
+- Then verify:
+  ```bash
+  kpsewhich armtex.sty
+  ```
 
 **"Unicode character not set up for use with LaTeX"**
 - Ensure you have the correct language packages installed
